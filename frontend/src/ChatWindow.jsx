@@ -52,7 +52,7 @@ export default function ChatWindow() {
       credentials: "include",
     };
     try {
-      const res = await fetch("http://localhost:8080/api/chat", options);
+      const res = await fetch("https://chatgpt-se61.onrender.com/api/chat", options);
       const data = await res.json();
       setReply(data?.data ?? null);
       if (currThreadId === "new") {
@@ -97,7 +97,7 @@ export default function ChatWindow() {
 
     const verifyCookie = async () => {
       const { data } = await axios.post(
-        "http://localhost:8080/api",
+        "https://chatgpt-se61.onrender.com/api",
         {},
         { withCredentials: true }
       );
@@ -106,7 +106,7 @@ export default function ChatWindow() {
         setUser(user);
       } else {
         await axios.post(
-          "http://localhost:8080/api/logout",
+          "https://chatgpt-se61.onrender.com/api/logout",
           {},
           { withCredentials: true }
         );
@@ -125,7 +125,7 @@ export default function ChatWindow() {
   const Logout = async () => {
     setIsLoggingOut(true);
     const { data } = await axios.post(
-      "http://localhost:8080/api/logout",
+      "https://chatgpt-se61.onrender.com/api/logout",
       {},
       { withCredentials: true }
     );

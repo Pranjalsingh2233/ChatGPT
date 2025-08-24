@@ -17,7 +17,7 @@ export default function Sidebar() {
 
   const getAllThreads = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/thread", {
+      const res = await fetch("https://chatgpt-se61.onrender.com/api/thread", {
         credentials: "include",
       });
       const data = await res.json();
@@ -49,7 +49,9 @@ export default function Sidebar() {
     setIsCollapsed(false);
 
     try {
-      const res = await fetch(`http://localhost:8080/api/thread/${id}`);
+      const res = await fetch(
+        `https://chatgpt-se61.onrender.com/api/thread/${id}`
+      );
       const data = await res.json();
       setPrevChats(data);
       setNewChat(false);
@@ -61,9 +63,12 @@ export default function Sidebar() {
 
   const deleteThread = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8080/api/thread/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://chatgpt-se61.onrender.com/api/thread/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       setAllThreads((prev) => prev.filter((thread) => thread.threadId !== id));
       if (id === currThreadId) {
         createNewChat();
@@ -80,11 +85,7 @@ export default function Sidebar() {
         onClick={() => setIsCollapsed(false)}
       ></i>
       <button className="start-btn" onClick={createNewChat}>
-        <img
-          src="src/assets/blacklogo.png"
-          alt="GPT logo"
-          className="logo"
-        ></img>
+        <img src="/blacklogo.png" alt="GPT logo" className="logo"></img>
         <span style={{ fontSize: "14px" }}>New chat</span>
         <i className="fa-solid fa-pen-to-square"></i>
       </button>

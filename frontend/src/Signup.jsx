@@ -35,7 +35,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/signup",
+        "https://chatgpt-se61.onrender.com/api/signup",
         {
           ...inputValue,
         },
@@ -66,7 +66,7 @@ const Signup = () => {
     <div className="container">
       <span className="top-text">
         <img
-          src="src/assets/blacklogo.png"
+          src="/blacklogo.png"
           alt="GPT logo"
           className="logo"
           style={{ marginRight: "0.5rem" }}
