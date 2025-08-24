@@ -1,0 +1,104 @@
+/* For login and signup page from jwt docs */
+
+.container {
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.top-text {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  position: relative;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  max-width: 130px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #656262;
+}
+
+.form_container {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.form_container > h2 {
+  margin-block: 1rem;
+  padding-block: 0.6rem;
+  color: #000;
+  font-size: 1.9rem;
+}
+
+.form_container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form_container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form_container input {
+  color: #000;
+  border: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid gray;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.form_container input::placeholder {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.form_container button {
+  background-color: #131313;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.fix-color {
+  color: #5d5d5d;
+}
+
+span a {
+  text-decoration: none;
+  color: #000;
+}
+
+@media (max-width: 400px) {
+  .form_container{
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .top-text {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
