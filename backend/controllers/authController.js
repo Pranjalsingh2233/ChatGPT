@@ -15,9 +15,10 @@ module.exports.Signup = async (req, res, next) => {
     const user = await User.create({ email, password, username, createdAt });
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: true, // required for cross-site cookies over HTTPS
       sameSite: "none", //this one too
+      path: "/",
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     res.status(201).json({
@@ -48,9 +49,10 @@ module.exports.Login = async (req, res, next) => {
     }
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: true, // required for cross-site cookies over HTTPS
       sameSite: "none", //this one too
+      path: "/",
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     res.status(201).json({
@@ -67,9 +69,10 @@ module.exports.Login = async (req, res, next) => {
 
 module.exports.Logout = (req, res) => {
   res.clearCookie("token", {
-    path: "/",
-    sameSite: "none",
+    httpOnly: true,
     secure: true,
+    sameSite: "none",
+    path: "/",
   });
   res.status(201).json({ message: "Logged out successfully", success: true });
 };
