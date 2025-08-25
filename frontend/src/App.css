@@ -13,4 +13,5 @@ body {
     background-color: #212121;
     display: flex;
     position: relative;
+    height: calc(var(--vh, 1vh) * 100);
 }
