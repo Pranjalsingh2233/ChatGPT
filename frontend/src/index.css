@@ -136,6 +136,12 @@
     .navbar span, .userIconDiv {
         margin: 1rem !important;
     }
+    .fa-trash {
+        opacity: 1 !important;
+    }
+    .dropdown {
+        right: 1rem !important;
+    }
 }
 @media (max-width: 700px) {
     .inputBox, .newChat, .chats {
@@ -242,8 +248,8 @@
 
 .dropdown {
     position: absolute;
-    top: 4rem;
-    right: 4rem;
+    top: 3rem;
+    right: 2rem;
     width: 150px;
     background-color: #323232;
     padding: 0.3rem 0.5rem;
@@ -329,4 +335,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* For mobile view fix */
+button,
+a,
+div,
+li {
+  -webkit-tap-highlight-color: transparent; 
 }
