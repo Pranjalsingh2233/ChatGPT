@@ -344,3 +344,20 @@ div,
 li {
   -webkit-tap-highlight-color: transparent; 
 }
+
+/* Page not found */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+}
+
+.child h1 {
+    font-size: 1.5rem;
+}
+
+.child p {
+    line-height: 1.5rem;
+}
