@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NotFound() {
   return (
-    <div className="container">
+    <div className="wrapper">
       <div className="child">
         <img src="/blacklogo.png" alt="GPT logo" className="logo"></img>
         <h1>404 Not Found</h1>
